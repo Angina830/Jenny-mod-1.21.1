@@ -1,0 +1,21 @@
+{
+  "itemGroup.sexmod": "Sexmod",
+  "item.sexmod.jenny_spawn_egg": "Jenny Spawn Egg",
+  "item.sexmod.ellie_spawn_egg": "Ellie Spawn Egg",
+  "item.sexmod.slime_spawn_egg": "Slime Spawn Egg",
+  "item.sexmod.bee_spawn_egg": "Bee Spawn Egg",
+  "item.sexmod.bia_spawn_egg": "Bia Spawn Egg",
+  "item.sexmod.allie_spawn_egg": "Allie Spawn Egg",
+  "item.sexmod.goblin_spawn_egg": "Goblin Spawn Egg",
+  "item.sexmod.kobold_spawn_egg": "Kobold Spawn Egg",
+  "item.sexmod.cat_spawn_egg": "Cat Spawn Egg",
+  "entity.sexmod.jenny": "Jenny",
+  "entity.sexmod.ellie": "Ellie",
+  "entity.sexmod.slime": "Slime",
+  "entity.sexmod.bee": "Bee",
+  "entity.sexmod.bia": "Bia",
+  "entity.sexmod.allie": "Allie",
+  "entity.sexmod.goblin": "Goblin",
+  "entity.sexmod.kobold": "Kobold",
+  "entity.sexmod.cat": "Cat"
+}

@@ -1,0 +1,21 @@
+{
+  "itemGroup.sexmod": "Sexmod",
+  "item.sexmod.jenny_spawn_egg": "Яйцо призыва Дженни",
+  "item.sexmod.ellie_spawn_egg": "Яйцо призыва Элли",
+  "item.sexmod.slime_spawn_egg": "Яйцо призыва Слайма",
+  "item.sexmod.bee_spawn_egg": "Яйцо призыва Пчелки",
+  "item.sexmod.bia_spawn_egg": "Яйцо призыва Бии",
+  "item.sexmod.allie_spawn_egg": "Яйцо призыва Элли (Allie)",
+  "item.sexmod.goblin_spawn_egg": "Яйцо призыва Гоблина",
+  "item.sexmod.kobold_spawn_egg": "Яйцо призыва Кобольда",
+  "item.sexmod.cat_spawn_egg": "Яйцо призыва Кошки",
+  "entity.sexmod.jenny": "Дженни",
+  "entity.sexmod.ellie": "Элли",
+  "entity.sexmod.slime": "Слайм",
+  "entity.sexmod.bee": "Пчелка",
+  "entity.sexmod.bia": "Бия",
+  "entity.sexmod.allie": "Элли",
+  "entity.sexmod.goblin": "Гоблин",
+  "entity.sexmod.kobold": "Кобольд",
+  "entity.sexmod.cat": "Кошка"
+}

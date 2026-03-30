@@ -1,0 +1,32 @@
+modLoader="javafml"
+loaderVersion="[52,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="sexmod"
+version="1.8.0"
+displayName="SexMod"
+description='''
+SexMod for Minecraft 1.21.1
+'''
+
+[[dependencies.sexmod]]
+modId="forge"
+mandatory=true
+versionRange="[52.0.0,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.sexmod]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.21.1,1.22)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.sexmod]]
+modId="geckolib"
+mandatory=true
+versionRange="[4.6,)"
+ordering="NONE"
+side="BOTH"
