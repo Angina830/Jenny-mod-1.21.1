@@ -9,6 +9,20 @@ public class JennyEntity extends BaseGirlEntity {
     @Override public String getGeoFileName() { return "jennydressed"; }
     @Override public String getNudeGeoFileName() { return "jennynude"; }
     @Override public java.util.List<String> getAvailableActions() {
-        return java.util.List.of("Follow", "Stay", "Missionary", "Doggy", "Blowjob", "Boobjob", "Stop");
+        String homePosStr = this.entityData.get(HOME_POS);
+        if (!"0|0|0".equals(homePosStr)) {
+            String[] parts = homePosStr.split("\\|");
+            if (parts.length == 3) {
+                try {
+                    double hX = Double.parseDouble(parts[0]);
+                    double hY = Double.parseDouble(parts[1]);
+                    double hZ = Double.parseDouble(parts[2]);
+                    if (this.distanceToSqr(hX, hY, hZ) < 100.0) { // 10 blocks (squared)
+                        return java.util.List.of("Follow", "Stay", "Missionary", "Doggy", "Blowjob", "Boobjob", "Leave House", "Stop");
+                    }
+                } catch (Exception ignored) {}
+            }
+        }
+        return java.util.List.of("Follow", "Stay", "Missionary", "Doggy", "Blowjob", "Boobjob", "House", "Stop");
     }
 }

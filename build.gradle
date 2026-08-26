@@ -16,7 +16,7 @@ plugins {
 apply plugin: 'net.minecraftforge.gradle'
 
 group = 'com.schnurritv'
-version = '1.8.0-1.21.1'
+version = '1.9.0-1.21.1-SwineSync'
 
 base {
     archivesName = 'sexmod'

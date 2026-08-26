@@ -46,6 +46,9 @@ public class EntityRegistry {
     public static final RegistryObject<EntityType<com.schnurritv.sexmod.entity.cat.CatEntity>> CAT = ENTITIES.register("cat", 
             () -> EntityType.Builder.of(com.schnurritv.sexmod.entity.cat.CatEntity::new, MobCategory.CREATURE).sized(0.6f, 1.8f).build("cat"));
 
+    public static final RegistryObject<EntityType<com.schnurritv.sexmod.entity.pig.PigProxyEntity>> PIG_PROXY = ENTITIES.register("pig_proxy", 
+            () -> EntityType.Builder.of(com.schnurritv.sexmod.entity.pig.PigProxyEntity::new, MobCategory.CREATURE).sized(0.6f, 1.0f).build("pig_proxy"));
+
     // Items (Spawn Eggs)
     public static final RegistryObject<Item> JENNY_SPAWN_EGG = ITEMS.register("jenny_spawn_egg", 
             () -> new ForgeSpawnEggItem(JENNY, 0xFFA500, 0xFFFFFF, new Item.Properties()));
@@ -78,17 +81,21 @@ public class EntityRegistry {
     public static final RegistryObject<CreativeModeTab> SEXMOD_TAB = CREATIVE_MODE_TABS.register("sexmod_tab",
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.sexmod"))
-                    .icon(() -> new ItemStack(JENNY_SPAWN_EGG.get()))
+                    .icon(() -> JENNY_SPAWN_EGG.isPresent() ? new ItemStack(JENNY_SPAWN_EGG.get()) : net.minecraft.world.item.ItemStack.EMPTY)
                     .displayItems((parameters, output) -> {
-                        output.accept(JENNY_SPAWN_EGG.get());
-                        output.accept(ELLIE_SPAWN_EGG.get());
-                        output.accept(SLIME_SPAWN_EGG.get());
-                        output.accept(BEE_SPAWN_EGG.get());
-                        output.accept(BIA_SPAWN_EGG.get());
-                        output.accept(ALLIE_SPAWN_EGG.get());
-                        output.accept(GOBLIN_SPAWN_EGG.get());
-                        output.accept(KOBOLD_SPAWN_EGG.get());
-                        output.accept(CAT_SPAWN_EGG.get());
+                        if (JENNY_SPAWN_EGG.isPresent()) output.accept(JENNY_SPAWN_EGG.get());
+                        if (ELLIE_SPAWN_EGG.isPresent()) output.accept(ELLIE_SPAWN_EGG.get());
+                        if (SLIME_SPAWN_EGG.isPresent()) output.accept(SLIME_SPAWN_EGG.get());
+                        if (BEE_SPAWN_EGG.isPresent()) output.accept(BEE_SPAWN_EGG.get());
+                        if (BIA_SPAWN_EGG.isPresent()) output.accept(BIA_SPAWN_EGG.get());
+                        if (ALLIE_SPAWN_EGG.isPresent()) output.accept(ALLIE_SPAWN_EGG.get());
+                        if (GOBLIN_SPAWN_EGG.isPresent()) output.accept(GOBLIN_SPAWN_EGG.get());
+                        if (KOBOLD_SPAWN_EGG.isPresent()) output.accept(KOBOLD_SPAWN_EGG.get());
+                        if (CAT_SPAWN_EGG.isPresent()) output.accept(CAT_SPAWN_EGG.get());
+                        if (com.schnurritv.sexmod.item.ItemRegistry.BOOB_POTION.isPresent()) output.accept(com.schnurritv.sexmod.item.ItemRegistry.BOOB_POTION.get());
+                        if (com.schnurritv.sexmod.item.ItemRegistry.BOOB_POTION_MEDIUM.isPresent()) output.accept(com.schnurritv.sexmod.item.ItemRegistry.BOOB_POTION_MEDIUM.get());
+                        if (com.schnurritv.sexmod.item.ItemRegistry.BOOB_POTION_SMALL.isPresent()) output.accept(com.schnurritv.sexmod.item.ItemRegistry.BOOB_POTION_SMALL.get());
+                        if (com.schnurritv.sexmod.item.ItemRegistry.BOOB_POTION_TINY.isPresent()) output.accept(com.schnurritv.sexmod.item.ItemRegistry.BOOB_POTION_TINY.get());
                     })
                     .build());
 

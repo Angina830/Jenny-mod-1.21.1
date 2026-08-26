@@ -25,20 +25,20 @@ public class SexModConfig {
 
         BUILDER.comment("Vertical (Y) and Distance (Z) offsets for different scenes.");
 
-        DOGGY_Y = BUILDER.defineInRange("doggyY", 1.5, 0.0, 5.0);
-        DOGGY_Z = BUILDER.defineInRange("doggyZ", 0.6, 0.0, 5.0);
+        DOGGY_Y = BUILDER.defineInRange("doggyY", 1.2771739130434785, 0.0, 5.0);
+        DOGGY_Z = BUILDER.defineInRange("doggyZ", 0.32608695652173914, 0.0, 5.0);
 
-        MISSIONARY_Y = BUILDER.defineInRange("missionaryY", 1.7, 0.0, 5.0);
-        MISSIONARY_Z = BUILDER.defineInRange("missionaryZ", 0.7, 0.0, 5.0);
+        MISSIONARY_Y = BUILDER.defineInRange("missionaryY", 1.059782608695652, 0.0, 5.0);
+        MISSIONARY_Z = BUILDER.defineInRange("missionaryZ", 0.7065217391304347, 0.0, 5.0);
 
-        BLOWJOB_Y = BUILDER.defineInRange("blowjobY", 1.2, 0.0, 5.0);
-        BLOWJOB_Z = BUILDER.defineInRange("blowjobZ", 0.5, 0.0, 5.0);
+        BLOWJOB_Y = BUILDER.defineInRange("blowjobY", 1.059782608695652, 0.0, 5.0);
+        BLOWJOB_Z = BUILDER.defineInRange("blowjobZ", 0.0, 0.0, 5.0);
 
-        PAIZURI_Y = BUILDER.defineInRange("paizuriY", 1.4, 0.0, 5.0);
-        PAIZURI_Z = BUILDER.defineInRange("paizuriZ", 0.6, 0.0, 5.0);
+        PAIZURI_Y = BUILDER.defineInRange("paizuriY", 1.1684782608695652, 0.0, 5.0);
+        PAIZURI_Z = BUILDER.defineInRange("paizuriZ", 0.0, 0.0, 5.0);
 
         DEFAULT_Y = BUILDER.defineInRange("defaultY", 1.5, 0.0, 5.0);
-        DEFAULT_Z = BUILDER.defineInRange("defaultZ", 0.6, 0.0, 5.0);
+        DEFAULT_Z = BUILDER.defineInRange("defaultZ", 1.5217391304347827, 0.0, 5.0);
 
         BUILDER.pop();
         SPEC = BUILDER.build();

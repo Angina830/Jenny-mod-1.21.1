@@ -53,9 +53,51 @@ public class GirlRenderer<T extends SexEntity> extends GeoEntityRenderer<T> {
         boolean inScene = animatable.getEntityData().get(SexEntity.IS_LOCKED);
         applyCustomRotations(model.topLevelBones().get(0), inScene); // Start recursion for cock tilt
         
+        float boobScale = animatable.getEntityData().get(SexEntity.BOOB_SCALE);
+        
         skipCubeBones.clear();
         for (GeoBone bone : model.topLevelBones()) {
             filterBones(bone, animatable, false);
+        }
+        
+        if (boobScale != 1.0f) {
+            for (GeoBone bone : model.topLevelBones()) {
+                applyBoobScale(bone, boobScale);
+            }
+        }
+    }
+
+    private void applyBoobScale(GeoBone bone, float scale) {
+        String name = bone.getName().toLowerCase();
+        if (name.contains("armor")) {
+            return;
+        }
+
+        boolean shouldScale = name.contains("boob") || name.contains("tit") || name.contains("chest") || name.contains("melon");
+        
+        if (shouldScale) {
+            // Apply uniform scaling
+            bone.setScaleX(scale);
+            bone.setScaleY(scale);
+            bone.setScaleZ(scale);
+            
+            // Move apart slightly by 0.05 when shrinking
+            if (scale < 1.0f) {
+                // Determine side (L/R)
+                boolean isLeft = name.endsWith("l") || name.contains("_l") || name.contains("left");
+                boolean isRight = name.endsWith("r") || name.contains("_r") || name.contains("right");
+                
+                if (isLeft) {
+                    bone.setPosX(bone.getPosX() + 0.05f);
+                } else if (isRight) {
+                    bone.setPosX(bone.getPosX() - 0.05f);
+                }
+            }
+            return;
+        }
+
+        for (GeoBone child : bone.getChildBones()) {
+            applyBoobScale(child, scale);
         }
     }
 
@@ -152,15 +194,16 @@ public class GirlRenderer<T extends SexEntity> extends GeoEntityRenderer<T> {
             return;
         }
 
-        // --- Outside partner tree: hide standalone phantom bones (only when NOT in scene) ---
+        // --- Outside partner tree: hide standalone phantom bones AND ARMOR ---
         boolean isStandalonePhantom = name.contains("steve") || 
                                      name.contains("alex") || 
                                      name.contains("partner") || 
                                      name.contains("diamond") || 
                                      name.contains("male") || 
-                                     name.contains("boy");
+                                     name.contains("boy") ||
+                                     name.contains("armor");
 
-        if (isStandalonePhantom && !inScene) {
+        if (isStandalonePhantom && (!inScene || name.contains("armor"))) {
             bone.setHidden(true);
             return;
         }

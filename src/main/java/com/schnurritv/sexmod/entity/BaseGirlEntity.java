@@ -120,6 +120,20 @@ public abstract class BaseGirlEntity extends SexEntity {
 
     @Override
     public InteractionResult mobInteract(Player player, InteractionHand hand) {
+        ItemStack itemStack = player.getItemInHand(hand);
+        if (com.schnurritv.sexmod.item.ItemRegistry.BOOB_POTION.isPresent() && itemStack.is(com.schnurritv.sexmod.item.ItemRegistry.BOOB_POTION.get())) {
+            return InteractionResult.PASS;
+        }
+        if (com.schnurritv.sexmod.item.ItemRegistry.BOOB_POTION_MEDIUM.isPresent() && itemStack.is(com.schnurritv.sexmod.item.ItemRegistry.BOOB_POTION_MEDIUM.get())) {
+            return InteractionResult.PASS;
+        }
+        if (com.schnurritv.sexmod.item.ItemRegistry.BOOB_POTION_SMALL.isPresent() && itemStack.is(com.schnurritv.sexmod.item.ItemRegistry.BOOB_POTION_SMALL.get())) {
+            return InteractionResult.PASS;
+        }
+        if (com.schnurritv.sexmod.item.ItemRegistry.BOOB_POTION_TINY.isPresent() && itemStack.is(com.schnurritv.sexmod.item.ItemRegistry.BOOB_POTION_TINY.get())) {
+            return InteractionResult.PASS;
+        }
+
         if (this.level().isClientSide) {
             DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
                 Minecraft.getInstance().setScreen(new InteractionScreen(this, getAvailableActions()));

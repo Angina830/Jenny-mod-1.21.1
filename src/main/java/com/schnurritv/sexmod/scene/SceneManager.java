@@ -28,26 +28,64 @@ public class SceneManager {
     }
 
     private static void preparePlayerForScene(BaseGirlEntity girl, Player player, BlockPos bedPos) {
-        double x = bedPos.getX() + 0.5;
-        double y = bedPos.getY() + 0.5625; // Bed top
-        double z = bedPos.getZ() + 0.5;
+        double x, y, z;
+        float rot;
 
-        net.minecraft.world.level.block.state.BlockState state = girl.level().getBlockState(bedPos);
-        float rot = girl.getYRot();
-        if (state.getBlock() instanceof BedBlock) {
-            rot = state.getValue(BedBlock.FACING).toYRot();
+        if (bedPos != null) {
+            x = bedPos.getX() + 0.5;
+            y = bedPos.getY() + 0.5625;
+            z = bedPos.getZ() + 0.5;
+            net.minecraft.world.level.block.state.BlockState state = girl.level().getBlockState(bedPos);
+            rot = girl.getYRot();
+            if (state.getBlock() instanceof BedBlock) {
+                rot = state.getValue(BedBlock.FACING).toYRot();
+            }
+        } else {
+            x = girl.getX();
+            y = girl.getY() + 0.5;
+            z = girl.getZ();
+            rot = girl.getYRot();
         }
-        
+
+        // Apply custom offsets based on animal type
+        String animal = girl.getGirlName();
+        if ("pig".equals(animal) || "chicken".equals(animal) || "sheep".equals(animal)) {
+            double h = 0.5; // Default (pig)
+            double back = 0.2;
+            
+            if ("chicken".equals(animal)) {
+                h = 0.5;
+                back = 0.3;
+            } else if ("sheep".equals(animal)) {
+                h = 0.7;
+                back = 0.3;
+            }
+            
+            // Apply a block lift for bedless scenes
+            if (bedPos == null) {
+                y = girl.getY() + h;
+            }
+
+            // Apply backward offset
+            double rad = Math.toRadians(rot);
+            x += Math.sin(rad) * back;
+            z -= Math.cos(rad) * back;
+        }
+
         girl.teleportTo(x, y, z);
         girl.setYRot(rot);
-        player.teleportTo(x, y - 0.1, z);
+
+        // Remove the -0.1 offset if no bed is present to prevent falling into blocks
+        double playerY = (bedPos != null) ? y - 0.1 : y;
+
+        player.teleportTo(x, playerY, z);
         player.setYRot(rot);
         player.setXRot(15.0f);
-        
+
         girl.getEntityData().set(SexEntity.IS_LOCKED, true);
         girl.getEntityData().set(SexEntity.PARTNER_UUID, player.getUUID().toString());
         girl.getEntityData().set(SexEntity.TARGET_ROTATION, rot);
-        girl.getEntityData().set(SexEntity.TARGET_POS, x + "|" + (y-0.1) + "|" + z);
+        girl.getEntityData().set(SexEntity.TARGET_POS, x + "|" + playerY + "|" + z);
         girl.getEntityData().set(SexEntity.CLOTHING_STATE, 1);
     }
 
@@ -55,7 +93,8 @@ public class SceneManager {
         if (girl.level().isClientSide) return;
 
         BlockPos bedPos = getBedFoot(girl);
-        if (bedPos == null) {
+        String name = girl.getGirlName();
+        if (bedPos == null && !"pig".equals(name) && !"chicken".equals(name) && !"sheep".equals(name)) {
             player.displayClientMessage(Component.literal("This action requires a bed nearby!"), true);
             return;
         }
@@ -86,7 +125,8 @@ public class SceneManager {
         if (girl.level().isClientSide) return;
         
         BlockPos bedPos = getBedFoot(girl);
-        if (bedPos == null) {
+        String name = girl.getGirlName();
+        if (bedPos == null && !"pig".equals(name) && !"chicken".equals(name) && !"sheep".equals(name)) {
             player.displayClientMessage(Component.literal("This action requires a bed nearby!"), true);
             return;
         }

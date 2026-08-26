@@ -33,6 +33,8 @@ public abstract class SexEntity extends PathfinderMob implements GeoEntity {
     public static final EntityDataAccessor<String> ANIMATION_FOLLOW_UP = SynchedEntityData.defineId(SexEntity.class, EntityDataSerializers.STRING);
     public static final EntityDataAccessor<Integer> ANIMATION_TICKS = SynchedEntityData.defineId(SexEntity.class, EntityDataSerializers.INT);
     public static final EntityDataAccessor<Integer> CLOTHING_STATE = SynchedEntityData.defineId(SexEntity.class, EntityDataSerializers.INT);
+    public static final EntityDataAccessor<Float> BOOB_SCALE = SynchedEntityData.defineId(SexEntity.class, EntityDataSerializers.FLOAT);
+    public static final EntityDataAccessor<String> PRE_HOUSE_POS = SynchedEntityData.defineId(SexEntity.class, EntityDataSerializers.STRING);
 
     protected SexEntity(EntityType<? extends PathfinderMob> type, Level level) {
         super(type, level);
@@ -60,6 +62,8 @@ public abstract class SexEntity extends PathfinderMob implements GeoEntity {
         builder.define(ANIMATION_FOLLOW_UP, "null");
         builder.define(ANIMATION_TICKS, 0);
         builder.define(CLOTHING_STATE, 0);
+        builder.define(BOOB_SCALE, 1.0f);
+        builder.define(PRE_HOUSE_POS, "0|0|0");
     }
 
     @Override
@@ -78,6 +82,8 @@ public abstract class SexEntity extends PathfinderMob implements GeoEntity {
         compound.putString("AnimationFollowUp", this.entityData.get(ANIMATION_FOLLOW_UP));
         compound.putInt("AnimationTicks", this.entityData.get(ANIMATION_TICKS));
         compound.putInt("ClothingState", this.entityData.get(CLOTHING_STATE));
+        compound.putFloat("BoobScale", this.entityData.get(BOOB_SCALE));
+        compound.putString("PreHousePos", this.entityData.get(PRE_HOUSE_POS));
     }
 
     @Override
@@ -96,6 +102,8 @@ public abstract class SexEntity extends PathfinderMob implements GeoEntity {
         if (compound.contains("AnimationFollowUp")) this.entityData.set(ANIMATION_FOLLOW_UP, compound.getString("AnimationFollowUp"));
         if (compound.contains("AnimationTicks")) this.entityData.set(ANIMATION_TICKS, compound.getInt("AnimationTicks"));
         if (compound.contains("ClothingState")) this.entityData.set(CLOTHING_STATE, compound.getInt("ClothingState"));
+        if (compound.contains("BoobScale")) this.entityData.set(BOOB_SCALE, compound.getFloat("BoobScale"));
+        if (compound.contains("PreHousePos")) this.entityData.set(PRE_HOUSE_POS, compound.getString("PreHousePos"));
     }
 
     public void setSexModAnimation(SexModAnimation animation) {

@@ -9,6 +9,10 @@
   "item.sexmod.goblin_spawn_egg": "Яйцо призыва Гоблина",
   "item.sexmod.kobold_spawn_egg": "Яйцо призыва Кобольда",
   "item.sexmod.cat_spawn_egg": "Яйцо призыва Кошки",
+  "item.sexmod.boob_potion": "Зелье для Дженни (Увеличение)",
+  "item.sexmod.boob_potion_medium": "Зелье сисек (Уменьшение в 1.5 раза)",
+  "item.sexmod.boob_potion_small": "Зелье сисек (Уменьшение в 2 раза)",
+  "item.sexmod.boob_potion_tiny": "Зелье уменьшения (3x)",
   "entity.sexmod.jenny": "Дженни",
   "entity.sexmod.ellie": "Элли",
   "entity.sexmod.slime": "Слайм",
@@ -17,5 +21,9 @@
   "entity.sexmod.allie": "Элли",
   "entity.sexmod.goblin": "Гоблин",
   "entity.sexmod.kobold": "Кобольд",
-  "entity.sexmod.cat": "Кошка"
+  "entity.sexmod.cat": "Кошка",
+  "entity.sexmod.pig": "Свинья",
+  "entity.sexmod.chicken": "Курица",
+  "entity.sexmod.sheep": "Овца",
+  "action.sexmod.leave_house": "Выйти из дома"
 }

@@ -9,6 +9,10 @@
   "item.sexmod.goblin_spawn_egg": "Goblin Spawn Egg",
   "item.sexmod.kobold_spawn_egg": "Kobold Spawn Egg",
   "item.sexmod.cat_spawn_egg": "Cat Spawn Egg",
+  "item.sexmod.boob_potion": "Jenny's Boob Potion (Enlarge)",
+  "item.sexmod.boob_potion_medium": "Boob Potion (1.5x Reduction)",
+  "item.sexmod.boob_potion_small": "Boob Potion (2x Reduction)",
+  "item.sexmod.boob_potion_tiny": "Tiny Boob Potion (3x)",
   "entity.sexmod.jenny": "Jenny",
   "entity.sexmod.ellie": "Ellie",
   "entity.sexmod.slime": "Slime",
@@ -17,5 +21,9 @@
   "entity.sexmod.allie": "Allie",
   "entity.sexmod.goblin": "Goblin",
   "entity.sexmod.kobold": "Kobold",
-  "entity.sexmod.cat": "Cat"
+  "entity.sexmod.cat": "Cat",
+  "entity.sexmod.pig": "Pig",
+  "entity.sexmod.chicken": "Chicken",
+  "entity.sexmod.sheep": "Sheep",
+  "action.sexmod.leave_house": "Leave House"
 }

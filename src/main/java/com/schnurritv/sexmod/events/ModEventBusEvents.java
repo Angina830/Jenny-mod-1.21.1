@@ -24,6 +24,7 @@ public class ModEventBusEvents {
         event.put(EntityRegistry.GOBLIN.get(), SexEntity.createAttributes().build());
         event.put(EntityRegistry.KOBOLD.get(), SexEntity.createAttributes().build());
         event.put(EntityRegistry.CAT.get(), SexEntity.createAttributes().build());
+        event.put(EntityRegistry.PIG_PROXY.get(), SexEntity.createAttributes().build());
     }
 
     @Mod.EventBusSubscriber(modid = Main.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -39,6 +40,7 @@ public class ModEventBusEvents {
             event.registerEntityRenderer(EntityRegistry.GOBLIN.get(), ctx -> new GirlRenderer<>(ctx, "goblin"));
             event.registerEntityRenderer(EntityRegistry.KOBOLD.get(), ctx -> new GirlRenderer<>(ctx, "kobold"));
             event.registerEntityRenderer(EntityRegistry.CAT.get(), ctx -> new GirlRenderer<>(ctx, "cat"));
+            event.registerEntityRenderer(EntityRegistry.PIG_PROXY.get(), ctx -> new com.schnurritv.sexmod.client.renderer.PigProxyRenderer(ctx));
         }
     }
 }

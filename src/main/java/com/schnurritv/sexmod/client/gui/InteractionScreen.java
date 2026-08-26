@@ -111,6 +111,8 @@ public class InteractionScreen extends Screen {
             case "Doggy" -> "\u2665 Doggy";
             case "Blowjob" -> "\u2665 Blowjob";
             case "Boobjob" -> "\u2665 Boobjob";
+            case "House" -> "\u2302 House";
+            case "Leave House" -> "\uD83D\uDEAA Leave House";
             default -> action;
         };
     }
@@ -133,7 +135,7 @@ public class InteractionScreen extends Screen {
         } else if ("Stay".equals(action)) {
             NetworkHandler.sendMovementStateUpdate(girl.getId(), "STAY");
         } else if ("Missionary".equals(action) || "Doggy".equals(action) || 
-                   "Blowjob".equals(action) || "Boobjob".equals(action) || "Stop".equals(action)) {
+                   "Blowjob".equals(action) || "Boobjob".equals(action) || "Stop".equals(action) || "House".equals(action) || "Leave House".equals(action)) {
             NetworkHandler.sendSceneAction(girl.getId(), action);
         }
     }

@@ -31,6 +31,12 @@ public class NetworkHandler {
                 .decoder(SceneActionPacket::decode)
                 .consumerMainThread(SceneActionPacket::handle)
                 .add();
+
+        INSTANCE.messageBuilder(OpenPigInteractionPacket.class, NetworkDirection.PLAY_TO_CLIENT)
+                .encoder(OpenPigInteractionPacket::encode)
+                .decoder(OpenPigInteractionPacket::decode)
+                .consumerMainThread(OpenPigInteractionPacket::handle)
+                .add();
     }
 
     public static void broadcastAnimationSync(SexEntity entity, SexModAnimation animation) {
