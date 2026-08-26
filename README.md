@@ -1,3 +1,25 @@
+## ⚠️ Project Closed and Archived
+
+This repository has been moved to an archived state (Read-Only).
+Further support and updates have been discontinued to avoid potential legal claims and conflicts with the Mojang/Microsoft EULA.
+
+The source code in the main branch is fully deobfuscated and open to the community. If you wish to update the mod or port it to other game versions, feel free to fork the repository and continue developing the project yourself.
+
+
+
+
+
+## ⚠️ Проект закрыт и заархивирован / Project Archived
+
+Этот репозиторий переведен в статус архива (Read-Only). 
+Дальнейшая поддержка и обновления прекращены во избежание возможных юридических претензий и конфликтов с EULA Mojang/Microsoft.
+
+Исходный код в основной ветке полностью деобфусцирован и открыт для сообщества. Если вы хотите обновить мод или портировать его на другие версии игры — делайте Fork и развивайте проект самостоятельно.
+
+
+
+
+
 # Jenny-mod-1.21.1
 I ported the mod, but made a few changes. For instance, it now runs via GeckoLib for animations, and I highly recommend avoiding OptiFine. Also, some content had to be cut because it was just too difficult to implement in the current engine. On the bright side - all scenes are now completely free!
 
