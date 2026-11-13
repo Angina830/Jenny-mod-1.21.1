@@ -1,3 +1,6 @@
+> **Беру заказы / Open for commissions:** порты модов под актуальные версии Minecraft, плагины, фиксы крашей.
+> Telegram: [@Ggina2](https://t.me/Ggina2) · Email: debilgleb123@gmail.com
+
 ## ⚠️ Project Closed and Archived
 
 This repository has been moved to an archived state (Read-Only).
